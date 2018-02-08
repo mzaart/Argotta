@@ -3,6 +3,8 @@ using Multilang.Services.TranslationServices;
 using Multilang.Services.MessagingServices.Firebase;
 using Multilang.Services.ConfigurationServices;
 using Multilang.Repositories.UserRepository;
+using Multilang.Services.AuthTokenServices;
+using Multilang.Models.Jwt;
 using System.Net.Http;
 
 
@@ -15,6 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection {
             services.AddTransient<ITranslationService, UnofficialTranslationService>();
             services.AddTransient<FirebaseClient>();
             services.AddSingleton<IConfigService, Config>();
+            services.AddTransient<IAuthTokenService<JwtBody>, JwtService<JwtBody>>();
         }
 
         public static void addRepositories(this IServiceCollection services) {

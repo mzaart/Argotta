@@ -32,5 +32,10 @@ namespace Multilang.Services.ConfigurationServices {
         {
             return hostingEnvironment.ContentRootPath + "/" + config["GoogleCloud:AccountFile"];
         }
+
+        string IConfigService.GetJwtKey()
+        {
+            return config["JWT:Key"];
+        }
     }
 }
