@@ -10,7 +10,8 @@ namespace Multilang.Repositories.UserRepository {
             name = "Arabic",
             passwordHash = "Arabic",
             language = "Arabic",
-            langCode = "ar"
+            langCode = "ar",
+            firebaseToken = "d1HBOGgSALI:APA91bFet-Isi1BqEXbFolj88EjP53GsvbOcqBsdgyiMhhwyGi7gYOR1eJ6SqV2dC0G_oGzyE4RP357lFkgEiZIweYhUJR6TmiORLXc_u1LJa6JGS_1AWAFp7anlrgzaKtgB6CCvHPYY"
         };
 
         private readonly User english = new User {
@@ -19,7 +20,8 @@ namespace Multilang.Repositories.UserRepository {
             passwordHash = "English",
             language = "English",
             langCode = "en",
-            firebaseToken = "d5-lcwlWkWs:APA91bHu1zKHxAYSmU-GJFiUzTBibUNWQ3oSL7wQyV6FX4zIhiX0Fhz70Dy4d5s-OEwoP5OGHkNLUZ4a4vdXNDOwNFJXa2-J4g2S-3gRWdEJk6ZTINnbg9Vdr1HxaOBGigNH3R5FvQd5"
+            firebaseToken = "cVSVtEh1_5E:APA91bEyyshwzlYdqmQUX6hH8b80QPMEq8-UkOCitlhwjvr2qMh1zKEjYQTKn17Ht6YwemQSBu7esVQFrmwui4phY84-kShAkHXMuhsnytzzpr-9k04rABLdYL-MdyQBgj7Zh-K_gdwV"
+
         };
 
         private readonly User french = new User {

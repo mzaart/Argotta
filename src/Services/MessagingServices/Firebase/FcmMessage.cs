@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Multilang.Services.MessagingServices.Payloads;
+using System;
 
 namespace Multilang.Services.MessagingServices.Firebase {
 
@@ -30,6 +31,7 @@ namespace Multilang.Services.MessagingServices.Firebase {
         public FcmMessage() {}
 
         public string toJson() {
+            Console.WriteLine(JsonConvert.SerializeObject(this));
             return JsonConvert.SerializeObject(this);
         }
     }

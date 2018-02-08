@@ -10,7 +10,7 @@ namespace Multilang.Models.Messages {
         [JsonProperty("recepient_id")]
         public string recepientId { get; set; }
 
-        [JsonProperty("message")]
+        [JsonProperty("content")]
         public string message { get; set; }
     }
 }

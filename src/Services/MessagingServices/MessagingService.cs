@@ -42,10 +42,10 @@ namespace Multilang.Services.MessagingServices {
                     new System.DateTime(1970, 1, 1))).TotalSeconds,
                 content = translatedText
             });
+
             
-            Console.WriteLine(userTo.firebaseToken);
             return client.Notify(new FcmMessage(userTo.firebaseToken, 
-                new FcmNotification { title = translatedText }));
+                new FcmNotification { title = translatedText }, msg));
         }
     }
 }
