@@ -7,7 +7,7 @@ using Multilang.Services.AuthTokenServices;
 using Multilang.Models.Jwt;
 using Multilang.Models.Responses;
 
-namespace Multilang.Filters
+namespace Multilang.RequestPipeline.Filters
 {
     public class TokenAuth : ActionFilterAttribute
     {

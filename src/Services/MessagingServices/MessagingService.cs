@@ -23,13 +23,13 @@ namespace Multilang.Services.MessagingServices {
             this.translationService = translationService;
         }
 
-        HttpResponseMessage IMessagingService.SendMessage(string idFrom, string idTo,
+        async Task<HttpResponseMessage> IMessagingService.SendMessage(string idFrom, string idTo,
             string content)
         {
             var userFrom = userRepository.GetUserById(idFrom);
             var userTo = userRepository.GetUserById(idTo);
             
-            var translatedText = translationService.Translate(content, userTo.langCode, 
+            var translatedText = await translationService.Translate(content, userTo.langCode, 
                 userFrom.langCode);
 
             var msg = new MessagePayload(new Message 
@@ -44,7 +44,7 @@ namespace Multilang.Services.MessagingServices {
             });
 
             
-            return client.Notify(new FcmMessage(userTo.firebaseToken, 
+            return await client.Notify(new FcmMessage(userTo.firebaseToken, 
                 new FcmNotification { title = translatedText }, msg));
         }
     }

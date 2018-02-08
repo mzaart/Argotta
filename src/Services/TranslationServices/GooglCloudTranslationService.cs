@@ -3,6 +3,7 @@ using Google.Apis.Auth.OAuth2;
 using Multilang.Services.ConfigurationServices;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Multilang.Services.TranslationServices
 {
@@ -14,18 +15,19 @@ namespace Multilang.Services.TranslationServices
             this.config = config;
         }
 
-        string ITranslationService.Translate(string text, string targetLanguageCode, 
+        async Task<string> ITranslationService.Translate(string text, string targetLanguageCode, 
             string sourceLanguageCode)
         {
-            string json = File.ReadAllText(config.GetGoogleCloudAccountFilePath());
-            var credential = GoogleCredential.FromJson(json);
-            TranslationClient client = TranslationClient.Create(credential);
-            var response = client.TranslateText(text, targetLanguageCode,
-                sourceLanguageCode);
+            return await Task.Run( () => {
+                // TODO make this async
+                string json = File.ReadAllText(config.GetGoogleCloudAccountFilePath());
+                var credential = GoogleCredential.FromJson(json);
+                TranslationClient client = TranslationClient.Create(credential);
+                var response = client.TranslateText(text, targetLanguageCode,
+                    sourceLanguageCode);
 
-            Console.WriteLine(response.TranslatedText);
-
-            return response.TranslatedText;
+                return response.TranslatedText;
+            });
         }
     }
 }

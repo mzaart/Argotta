@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Multilang.Services.TranslationServices {
 
@@ -19,7 +20,7 @@ namespace Multilang.Services.TranslationServices {
             this.httpClient = httpClient;
         }
 
-        string ITranslationService.Translate(string text, string targetLanguageCode, 
+        async Task<string> ITranslationService.Translate(string text, string targetLanguageCode, 
             string sourceLanguageCode)
         {
             var args = new FormUrlEncodedContent(new Dictionary<string, string>
@@ -31,9 +32,9 @@ namespace Multilang.Services.TranslationServices {
                 {"q", text}
             });
 
-            var response = httpClient.PostAsync(END_POINT, args);
+            var response = await httpClient.PostAsync(END_POINT, args);
             StreamReader readStream = new StreamReader(
-                response.Result.Content.ReadAsStreamAsync().Result, Encoding.UTF8);
+                response.Content.ReadAsStreamAsync().Result, Encoding.UTF8);
             string responeText = readStream.ReadToEnd();
 
             Regex regex = new Regex(REGEX);

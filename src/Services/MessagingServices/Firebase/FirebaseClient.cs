@@ -22,7 +22,7 @@ namespace Multilang.Services.MessagingServices.Firebase
             this.client = client;;
         }
 
-        public HttpResponseMessage Notify(FcmMessage message)
+        public async Task<HttpResponseMessage> Notify(FcmMessage message)
         {
             var request = new HttpRequestMessage 
             {
@@ -37,7 +37,7 @@ namespace Multilang.Services.MessagingServices.Firebase
                     Encoding.UTF8, "application/json")
             };
 
-            return client.SendAsync(request).Result;
+            return await client.SendAsync(request);
         }
     }
 }

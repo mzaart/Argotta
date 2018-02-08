@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 using Multilang.Services.MessagingServices;
 using Multilang.Models.Messages;
 using Multilang.Models.Requests;
 using Multilang.Models.Responses;
 using Multilang.Repositories.UserRepository;
+using Multilang.Repositories.ProfilePicRepository;
+using Multilang.Models.Requests.Accounts;
 
 namespace Multilang.Controllers
 {
@@ -17,11 +21,14 @@ namespace Multilang.Controllers
     {
         private readonly IMessagingService messagingService;
         private readonly IUserRepository userRepository;
+        private readonly IProfilePicRepository picRepository;
 
-        public PocController(IMessagingService messagingService, IUserRepository userRepository)
+        public PocController(IMessagingService messagingService, 
+            IUserRepository userRepository, IProfilePicRepository picRepository)
         {
             this.messagingService = messagingService;
             this.userRepository = userRepository;
+            this.picRepository = picRepository;
         }
 
         /// <summary>
@@ -29,11 +36,11 @@ namespace Multilang.Controllers
         /// </summary>
         [HttpPost("send")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult Send([FromBody] SendMessageModel sendMessageModel) 
+        public async Task<JsonResult> Send([FromBody] SendMessageModel sendMessageModel) 
         {
             try 
             {
-                var response = this.messagingService.SendMessage(sendMessageModel.senderId, 
+                var response = await this.messagingService.SendMessage(sendMessageModel.senderId, 
                     sendMessageModel.recepientId, sendMessageModel.message);
                 
                 if (response.IsSuccessStatusCode) 
@@ -69,6 +76,13 @@ namespace Multilang.Controllers
                 Console.WriteLine(e.StackTrace);
                 return Json(new BaseResponse(false, e.Message));
             }
+        }
+
+        [HttpPost("test")]
+        public async Task<IActionResult> test([FromBody] SetProfilePicModal modal)
+        {
+            bool r = await picRepository.setProfilePic("0", modal.picBase64);
+            return Json(new BaseResponse(r));
         }
     }
 }

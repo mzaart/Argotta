@@ -33,6 +33,11 @@ namespace Multilang.Services.AuthTokenServices
 
         bool IAuthTokenService<T>.IsValid(string jwtTokenBase64)
         {
+            if (jwtTokenBase64 == null)
+            {
+                return false;
+            }
+            
             // check if format is valid
             string regex = @"^[^\.]+\.[^\.]+\.[^\.]+$";
             if(!(new Regex(regex).IsMatch(jwtTokenBase64))) 

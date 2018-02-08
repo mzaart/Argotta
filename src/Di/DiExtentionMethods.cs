@@ -4,6 +4,7 @@ using Multilang.Services.MessagingServices.Firebase;
 using Multilang.Services.ConfigurationServices;
 using Multilang.Repositories.UserRepository;
 using Multilang.Services.AuthTokenServices;
+using Multilang.Repositories.ProfilePicRepository;
 using Multilang.Models.Jwt;
 using System.Net.Http;
 
@@ -23,6 +24,7 @@ namespace Microsoft.Extensions.DependencyInjection {
         public static void addRepositories(this IServiceCollection services) {
             // to be changed
             services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddTransient<IProfilePicRepository, ProfilePicRepository>();
         }
 
         public static void AddRequiredClasses(this IServiceCollection services) {
