@@ -4,11 +4,12 @@ namespace Multilang.Models.Responses {
 
     public class BaseResponse {
         
+        [JsonRequired]
         [JsonProperty("succeeded")]
-        bool succeeded { get; set; }
+        public bool succeeded { get; set; }
 
         [JsonProperty("reason", NullValueHandling=NullValueHandling.Ignore)]
-        string reason;
+        public string reason;
 
         public BaseResponse(bool succeeded) : this(succeeded, null) {}
 

@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Multilang.RequestPipeline.Middlewhere;
+using Multilang.Docs;
 
 namespace Multilang
 {
@@ -41,6 +42,13 @@ namespace Multilang
             {
                 c.SwaggerDoc("v1", new Info { Title = "MultiLang API", Version = "v1" });
 
+                // set auth header
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme() { In = "header", 
+                    Description = "Please insert JWT with Bearer into field", 
+                    Name = "Authorization", Type = "apiKey" });
+
+                c.OperationFilter<HideParamsOperationFilter>();
+
                 // Set the comments path for the Swagger JSON and UI.
                 var basePath = AppContext.BaseDirectory;
                 var xmlPath = Path.Combine(basePath, "MultiLangApi.xml"); 
@@ -51,7 +59,7 @@ namespace Multilang
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //app.UseMiddleware<ProfilePicAuthMiddlewhere>();
+            app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseStaticFiles();            
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));

@@ -6,8 +6,9 @@ using Multilang.Repositories.UserRepository;
 using Multilang.Services.AuthTokenServices;
 using Multilang.Repositories.ProfilePicRepository;
 using Multilang.Models.Jwt;
+using Multilang.Utils;
 using System.Net.Http;
-
+using Multilang.RequestPipeline.Filters;
 
 namespace Microsoft.Extensions.DependencyInjection {
 
@@ -19,6 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection {
             services.AddTransient<FirebaseClient>();
             services.AddSingleton<IConfigService, Config>();
             services.AddTransient<IAuthTokenService<JwtBody>, JwtService<JwtBody>>();
+            services.AddTransient<TokenAuth>();
         }
 
         public static void addRepositories(this IServiceCollection services) {
@@ -29,6 +31,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 
         public static void AddRequiredClasses(this IServiceCollection services) {
             services.AddSingleton<HttpClient>();
+            services.AddTransient<LangCodes>();
         } 
     }
 }

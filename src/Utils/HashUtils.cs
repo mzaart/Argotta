@@ -79,7 +79,6 @@ namespace Multilang.Utils {
 
             byte[] bytes = new byte[hex.Length/2];
 
-
             for(int i = 1; i <= hex.Length-1; i += 2)
             {
                 bytes[i/2] = Convert.ToByte(hex[i-1] + "" + hex[i], 16);

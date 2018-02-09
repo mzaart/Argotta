@@ -1,67 +1,118 @@
 using Multilang.Models.Accounts;
 using System;
+using System.Collections.Generic;
 
 namespace Multilang.Repositories.UserRepository {
 
     public class UserRepository : IUserRepository
     {
-        private readonly User arabic = new User {
-            id = "0",
-            name = "Arabic",
-            passwordHash = "Arabic",
-            language = "Arabic",
-            langCode = "ar",
-            firebaseToken = "d1HBOGgSALI:APA91bFet-Isi1BqEXbFolj88EjP53GsvbOcqBsdgyiMhhwyGi7gYOR1eJ6SqV2dC0G_oGzyE4RP357lFkgEiZIweYhUJR6TmiORLXc_u1LJa6JGS_1AWAFp7anlrgzaKtgB6CCvHPYY"
-        };
+        private static int maxId = 0;
+        
+        private List<User> users;
 
-        private readonly User english = new User {
-            id = "1",
-            name = "English",
-            passwordHash = "English",
-            language = "English",
-            langCode = "en",
-            firebaseToken = "cVSVtEh1_5E:APA91bEyyshwzlYdqmQUX6hH8b80QPMEq8-UkOCitlhwjvr2qMh1zKEjYQTKn17Ht6YwemQSBu7esVQFrmwui4phY84-kShAkHXMuhsnytzzpr-9k04rABLdYL-MdyQBgj7Zh-K_gdwV"
-
-        };
-
-        private readonly User french = new User {
-            id = "2",
-            name = "French",
-            passwordHash = "French",
-            language = "French",
-            langCode = "fr",
-            firebaseToken = "d5-lcwlWkWs:APA91bHu1zKHxAYSmU-GJFiUzTBibUNWQ3oSL7wQyV6FX4zIhiX0Fhz70Dy4d5s-OEwoP5OGHkNLUZ4a4vdXNDOwNFJXa2-J4g2S-3gRWdEJk6ZTINnbg9Vdr1HxaOBGigNH3R5FvQd5"
-        };
-
-        User IUserRepository.GetUserById(string id)
+        public UserRepository()
         {
-            switch(id) {
-                case("0"):
-                    return arabic;
-                case("1"):
-                    return english;
-                case("2"):
-                    return french;
-                default:
-                    throw new System.Exception("User does not exist.");
-            }
+            this.users = new List<User>();
         }
 
-        void IUserRepository.UpdateFirebaseToken(string id, string token)
+        public User FindUser(Predicate<User> predicate)
         {
-            switch(id) {
-                case("0"):
-                    arabic.firebaseToken = token;
-                    return;
-                case("1"):
-                    english.firebaseToken = token;
-                    return;
-                case("2"):
-                    french.firebaseToken = token;
-                    return;
-                default:
-                    throw new System.Exception("User does not exist.");
+            return users.Find(predicate);
+        }
+
+        public bool UserExists(string displayName)
+        {
+            return users.Find(u => u.displayName == displayName) != null;
+        }
+
+        public bool AddToBlockedUsers(string userId, string blockedId)
+        {
+            User u = GetUserById(userId);
+            if (u == null)
+            {
+                return false;
             }
+
+            u.blockedIds.Add(blockedId);
+            return true;
+        }
+
+        public bool AddUser(User user)
+        {
+            user.id = maxId++.ToString();
+            users.Add(user);
+            return true;
+        }
+
+        public User GetUserById(string id)
+        {
+            return users.Find(u => u.id == id);
+        }
+
+        public bool RemoveFromBlockedUsers(string userId, string blockedId)
+        {
+            User u = GetUserById(userId);
+            if (u == null)
+            {
+                return false;
+            }
+
+            string id = u.blockedIds.Find(i => i == blockedId);
+            if (id == null)
+            {
+                return false;
+            }
+
+            u.blockedIds.Remove(blockedId);
+            return true;
+        }
+
+        public bool SetFirebaseToken(string id, string token)
+        {
+            User u = GetUserById(id);
+            if (u == null)
+            {
+                return false;
+            }
+
+            u.firebaseToken = token;
+            return true;
+        }
+
+        public bool SetLanguage(string id, string language)
+        {
+            User u = GetUserById(id);
+            if (u == null)
+            {
+                return false;
+            }
+
+            u.language = language;
+            return true;
+        }
+
+        public bool UpdateDisplayName(string id, string displayName)
+        {
+            User u = GetUserById(id);
+            if (u == null)
+            {
+                return false;
+            }
+
+            u.displayName = displayName;
+            return true;
+        }
+
+        public bool UpdatePassword(string id, string password)
+        {
+            User u = GetUserById(id);
+            if (u == null)
+            {
+                return false;
+            }
+
+            u.passwordHash = password;
+            return true;
         }
     }
 }

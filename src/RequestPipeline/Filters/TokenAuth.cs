@@ -26,22 +26,24 @@ namespace Multilang.RequestPipeline.Filters
                 if(tokenService.IsValid(token))
                 {
                     var body = tokenService.GetData(token);
-                    //context.ActionArguments.Add("email", body.email);
+                    context.ActionArguments["jwtBody"] = body;
                 }
                 else
                 {
-                    Reject(context);
+                    Console.WriteLine(1);
+                    Reject(context, "Invalid Token");
                 }
             }
             catch(Exception e)
             {
-                Reject(context);
+                Console.WriteLine(e.StackTrace);
+                Reject(context, "An error occurred while verifying token");
             }
         }
 
-        private void Reject(ActionExecutingContext context)
+        private void Reject(ActionExecutingContext context, String error)
         {
-            context.Result = new JsonResult(new BaseResponse(false, "Invalid token."));
+            context.Result = new JsonResult(new BaseResponse(false,  error));
         }
     }
 }

@@ -60,6 +60,7 @@ namespace Multilang.Controllers
             }
         }
 
+        /* 
         /// <summary>
         /// Updates user's Firebase token.
         /// </summary>
@@ -77,6 +78,7 @@ namespace Multilang.Controllers
                 return Json(new BaseResponse(false, e.Message));
             }
         }
+        */
 
         [HttpPost("test")]
         public async Task<IActionResult> test([FromBody] SetProfilePicModal modal)

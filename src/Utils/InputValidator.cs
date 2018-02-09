@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace PassCrypter.Utils 
+namespace Multilang.Utils 
 {
     class Validator
     {

@@ -1,12 +1,11 @@
+using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace Multilang.Models.Requests {
+namespace Multilang.Models.Requests.Accounts {
 
     public class UpdateFirebaseTokenModel {
 
-        [JsonProperty("id")]
-        public string id;
-
+        [Required]
         [JsonProperty("token")]
         public string token;
     }
