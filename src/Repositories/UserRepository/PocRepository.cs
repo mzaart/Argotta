@@ -114,5 +114,19 @@ namespace Multilang.Repositories.UserRepository {
             u.passwordHash = password;
             return true;
         }
+
+        public bool DeleteUser(string id)
+        {
+            User u = GetUserById(id);
+            if (u == null)
+            {
+                return false;
+            }
+            else
+            {
+                users.Remove(u);
+                return true;
+            }
+        }
     }
 }

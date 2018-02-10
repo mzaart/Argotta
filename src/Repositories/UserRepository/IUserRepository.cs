@@ -15,5 +15,6 @@ namespace Multilang.Repositories.UserRepository {
         bool SetLanguage(string id, string language);
         bool UpdateDisplayName(string id, string displayName);
         bool UpdatePassword(string id, string password);
+        bool DeleteUser(string id);
     }
 }

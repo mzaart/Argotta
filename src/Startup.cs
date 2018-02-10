@@ -33,6 +33,7 @@ namespace Multilang
         {
             // Add services.
             services.AddMvc();
+            services.AddMvcCore().AddDataAnnotations();
             services.addServices();
             services.addRepositories();
             services.AddRequiredClasses();

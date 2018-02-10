@@ -1,20 +1,24 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
-using Multilang.Utils;
 
-namespace Multilang.Models.Requests.Accounts
+namespace Multilang.Models.Accounts
 {
-    public class LoginModel
+    public class UpdateAccountModal
     {
-        [Required]
+
         [RegularExpression(Utils.Validator.ALPHA_SPACE)]
+        [JsonProperty("display_name")]
         public string displayName { get; set; }
 
         [StringLength(64, MinimumLength=64)]
         [JsonProperty("pass_hash")]
-        public string passHash { get; set; }
+        public string passwordHash { get; set; }
 
-        [Required]
+        [RegularExpression(Utils.Validator.ALPHA)]
+        [JsonProperty("language")]
+        public string language { get; set; }
+
         [JsonProperty("firebase_token")]
         public string firebaseToken { get; set; }
     }

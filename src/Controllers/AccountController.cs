@@ -15,19 +15,22 @@ using Multilang.RequestPipeline.Filters;
 
 namespace Multilang.Controllers
 {
+    [ValidateModel]
     [Route("/api/[controller]")]
     public class AccountController : Controller
     {
         private IUserRepository userRepository;
         private IProfilePicRepository picRepository;
         private IAuthTokenService<JwtBody> tokenService;
+        private LangCodes langCodes;
 
-        public AccountController(IUserRepository userRepository,
+        public AccountController(IUserRepository userRepository, LangCodes langCodes,
             IProfilePicRepository picRepository, IAuthTokenService<JwtBody> tokenService)
         {
             this.userRepository = userRepository;
             this.picRepository = picRepository;
             this.tokenService = tokenService;
+            this.langCodes = langCodes;
         }
 
 
@@ -107,15 +110,65 @@ namespace Multilang.Controllers
         }
 
         /// <summary>
-        /// Updates user's Firebase token.
+        /// Updates user's account inforation
         /// </summary>
         [ServiceFilter(typeof(TokenAuth))]
-        [HttpPost("updateFirebaseToken")]
+        [HttpPost("update")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult Firebase([FromBody] UpdateFirebaseTokenModel tokenModel, 
-            JwtBody jwtBody)
+        public JsonResult UpdateAccount([FromBody] UpdateAccountModal accModal, JwtBody jwt)
         {
-            return Json(jwtBody);
+            User user = userRepository.GetUserById(jwt.id);
+            if (user == null)
+            {
+                return Json(new BaseResponse(false, "User does not exist"));
+            }
+            else
+            {
+                if (accModal.displayName != null) user.displayName = accModal.displayName;
+                if (accModal.passwordHash != null) user.passwordHash = accModal.passwordHash;
+                if (accModal.firebaseToken != null) user.firebaseToken = accModal.firebaseToken;
+                if (accModal.language != null)
+                {
+                    user.language = accModal.language;
+                    user.langCode = langCodes.GetCode(user.language);
+                }
+
+                return Json(new BaseResponse(true));
+            }
+        }
+
+        /// <summary>
+        /// Sets user's profile picture
+        /// </summary>
+        [ServiceFilter(typeof(TokenAuth))]
+        [HttpPost("profilePicture")]
+        [ProducesResponseType(typeof(BaseResponse), 200)]
+        public async Task<IActionResult> SetProfilePic([FromBody] SetProfilePicModal modal, 
+            JwtBody jwt)
+        {
+            bool succeeded = await picRepository.setProfilePic(jwt.id, modal.picBase64);
+            return Json(new BaseResponse(succeeded));
+        }
+
+        /// <summary>
+        /// Get url to user's profile picture
+        /// </summary>
+        [ServiceFilter(typeof(TokenAuth))]
+        [HttpGet("profilePicture")]
+        [ProducesResponseType(typeof(ProfilePicResponse), 200)]
+        public JsonResult GetProfilePic(JwtBody jwt)
+        {
+            string path = picRepository.getProfilePicPath(jwt.id);
+            return Json(new ProfilePicResponse { succeeded = true, picUrl = path });
+        }
+
+        [ServiceFilter(typeof(TokenAuth))]
+        [HttpDelete("delete")]
+        [ProducesResponseType(typeof(BaseResponse), 200)]
+        public JsonResult DeleteAccount(JwtBody jwt)
+        {
+            bool deleted = userRepository.DeleteUser(jwt.id);
+            return Json(new BaseResponse(deleted, deleted ? null : "User does not exist"));
         }
     }
 }

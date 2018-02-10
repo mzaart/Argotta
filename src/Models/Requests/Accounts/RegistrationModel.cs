@@ -7,22 +7,22 @@ namespace Multilang.Models.Requests.Accounts
     public class RegistrationModel
     {
         [Required]
-        [CustomValidation(typeof(Utils.Validator), "AlphaSpace")]
+        [RegularExpression(Utils.Validator.ALPHA_SPACE)]
         [JsonProperty("display_name")]
-        public string displayName;
+        public string displayName { get; set; }
 
         [Required]
-        [StringLength(64)]
+        [StringLength(64, MinimumLength=64)]
         [JsonProperty("pass_hash")]
-        public string passHash;
+        public string passHash { get; set; }
 
         [Required]
-        [CustomValidation(typeof(Utils.Validator), "Alpha")]
+        [RegularExpression(Utils.Validator.ALPHA)]
         [JsonProperty("language")]
-        public string language;
+        public string language { get; set; }
 
         [Required]
         [JsonProperty("firebase_token")]
-        public string firebaseToken;
+        public string firebaseToken { get; set; }
     }
 }
