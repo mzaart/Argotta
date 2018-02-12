@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 
-namespace Multilang.Models.Accounts
+namespace Multilang.Models.Db
 {
     public class UpdateAccountModal
     {

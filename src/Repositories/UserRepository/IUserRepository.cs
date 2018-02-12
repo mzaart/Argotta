@@ -1,5 +1,5 @@
 using System;
-using Multilang.Models.Accounts;
+using Multilang.Models.Db;
 
 namespace Multilang.Repositories.UserRepository {
 

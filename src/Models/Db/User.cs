@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Multilang.Models.Accounts {
+namespace Multilang.Models.Db {
 
     public class User {
 
         public User() 
         {
             blockedIds = new List<string>();
+            invitations = new List<Invitation>();
         }
 
         public string id { get; set; }
@@ -15,7 +16,8 @@ namespace Multilang.Models.Accounts {
         public string langCode { get; set; }
         public string displayName { get; set; }
         public string passwordHash { get; set; }
-        public string firebaseToken;
-        public List<string> blockedIds;
+        public string firebaseToken { get; set; }
+        public List<string> blockedIds { get; set; }
+        public List<Invitation> invitations { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-using Multilang.Models.Accounts;
+using Multilang.Models.Db;
 using System;
 using System.Collections.Generic;
 

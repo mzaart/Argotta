@@ -5,7 +5,7 @@ using Multilang.Repositories.ProfilePicRepository;
 using Multilang.Models.Responses;
 using Multilang.Models.Requests.Accounts;
 using Multilang.Models.Responses.Accounts;
-using Multilang.Models.Accounts;
+using Multilang.Models.Db;
 using Multilang.Utils;
 using Multilang.Services.AuthTokenServices;
 using Multilang.Models.Jwt;
@@ -162,6 +162,9 @@ namespace Multilang.Controllers
             return Json(new ProfilePicResponse { succeeded = true, picUrl = path });
         }
 
+        /// <summary>
+        /// Deletes user's account
+        /// </summary>
         [ServiceFilter(typeof(TokenAuth))]
         [HttpDelete("delete")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
