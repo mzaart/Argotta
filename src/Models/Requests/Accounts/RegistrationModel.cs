@@ -17,11 +17,6 @@ namespace Multilang.Models.Requests.Accounts
         public string passHash { get; set; }
 
         [Required]
-        [RegularExpression(Utils.Validator.ALPHA)]
-        [JsonProperty("language")]
-        public string language { get; set; }
-
-        [Required]
         [JsonProperty("firebase_token")]
         public string firebaseToken { get; set; }
     }

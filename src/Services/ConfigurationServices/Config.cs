@@ -18,6 +18,11 @@ namespace Multilang.Services.ConfigurationServices {
                 .Build();
         }
 
+        public string GetDbConnectionString()
+        {
+            return config["ConnectionString"];
+        }
+
         string IConfigService.GetFirbaseUrl()
         {
             return config["Firebase:Url"];

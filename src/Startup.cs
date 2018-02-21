@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Multilang.RequestPipeline.Middlewhere;
 using Multilang.Docs;
+using Multilang.Db.Contexts;
 
 namespace Multilang
 {
@@ -55,6 +56,9 @@ namespace Multilang
                 var xmlPath = Path.Combine(basePath, "MultiLangApi.xml"); 
                 c.IncludeXmlComments(xmlPath);
             });
+
+            // entity framework
+            services.AddEntityFrameworkSqlite().AddDbContext<ApplicationDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

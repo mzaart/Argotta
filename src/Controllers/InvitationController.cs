@@ -37,9 +37,9 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpGet("invitations")]
         [ProducesResponseType(typeof(GetInvitationsResponse), 200)]
-        public JsonResult GetInvitations(JwtBody jwt) 
+        public async Task<JsonResult> GetInvitations(JwtBody jwt) 
         {   
-            User user = userRepository.GetUserById(jwt.id);
+            User user = await userRepository.GetById(jwt.id);
             if (user == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
@@ -58,9 +58,9 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("invitations")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult Invite([FromBody] RecipientModel recipient, JwtBody jwt)
+        public async Task<JsonResult> Invite([FromBody] RecipientModel recipient, JwtBody jwt)
         {
-            User user = userRepository.GetUserById(recipient.recipientId);
+            User user = await userRepository.GetById(recipient.recipientId);
             if (user == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
@@ -77,6 +77,7 @@ namespace Multilang.Controllers
                 senderDisplayName = jwt.displayName,
             });
 
+            await userRepository.Save();
             return Json(new BaseResponse(true));
         }
 
@@ -86,15 +87,16 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("Respond")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult Respond([FromBody] InvitationResponseModel invitationModel, JwtBody jwt)
+        public async Task<JsonResult> Respond([FromBody] InvitationResponseModel invitationModel, 
+            JwtBody jwt)
         {
-            User user = userRepository.GetUserById(jwt.id);
+            User user = await userRepository.GetById(jwt.id);
             if (user == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
             }
 
-            var invitation = user.invitations.Find(i => i.Id == invitationModel.invitationId);
+            var invitation = user.invitations.Find(i => i.senderId == invitationModel.invitationId);
             
             if (invitation == null)
             {
@@ -110,6 +112,7 @@ namespace Multilang.Controllers
                 user.invitations.Remove(invitation);
             }
 
+            await userRepository.Save();
             return Json(new BaseResponse(true));
         }
 
@@ -119,9 +122,9 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("block")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult Block([FromBody] RecipientModel recipient, JwtBody jwt)
+        public async Task<JsonResult> Block([FromBody] RecipientModel recipient, JwtBody jwt)
         {
-            User user = userRepository.GetUserById(jwt.id);
+            User user =await userRepository.GetById(jwt.id);
             if (user == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
@@ -133,6 +136,8 @@ namespace Multilang.Controllers
             }
 
             user.blockedIds.Add(recipient.recipientId);
+
+            await userRepository.Save();
             return Json(new BaseResponse(true));
         }
 
@@ -142,9 +147,9 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpDelete("block")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult UnBlock([FromBody] RecipientModel recipient, JwtBody jwt)
+        public async Task<JsonResult> UnBlock([FromBody] RecipientModel recipient, JwtBody jwt)
         {
-            User user = userRepository.GetUserById(jwt.id);
+            User user = await userRepository.GetById(jwt.id);
             if (user == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));

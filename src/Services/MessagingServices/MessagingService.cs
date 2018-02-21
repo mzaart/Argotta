@@ -26,8 +26,8 @@ namespace Multilang.Services.MessagingServices {
         async Task<HttpResponseMessage> IMessagingService.SendMessage(string idFrom, string idTo,
             string content)
         {
-            var userFrom = userRepository.GetUserById(idFrom);
-            var userTo = userRepository.GetUserById(idTo);
+            var userFrom = await userRepository.GetById(idFrom);
+            var userTo = await userRepository.GetById(idTo);
             
             var translatedText = await translationService.Translate(content, userTo.langCode, 
                 userFrom.langCode);

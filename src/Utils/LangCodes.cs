@@ -18,6 +18,9 @@ namespace Multilang.Utils
 
         public string GetCode(string language)
         {
+            if (!langCodes.ContainsKey(language)) {
+                return "en";
+            }
             return langCodes[language];
         }
     }

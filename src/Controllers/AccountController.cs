@@ -12,6 +12,7 @@ using Multilang.Models.Jwt;
 using System;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Multilang.RequestPipeline.Filters;
+using Multilang.Repositories;
 
 namespace Multilang.Controllers
 {
@@ -19,12 +20,12 @@ namespace Multilang.Controllers
     [Route("/api/[controller]")]
     public class AccountController : Controller
     {
-        private IUserRepository userRepository;
+        private IRepository<User> userRepository;
         private IProfilePicRepository picRepository;
         private IAuthTokenService<JwtBody> tokenService;
         private LangCodes langCodes;
 
-        public AccountController(IUserRepository userRepository, LangCodes langCodes,
+        public AccountController(IRepository<User> userRepository, LangCodes langCodes,
             IProfilePicRepository picRepository, IAuthTokenService<JwtBody> tokenService)
         {
             this.userRepository = userRepository;
@@ -43,31 +44,30 @@ namespace Multilang.Controllers
         public async Task<JsonResult> Register([FromBody] RegistrationModel registrationModel,
             [FromServices] LangCodes langCodes)
         {
-            if (userRepository.UserExists(registrationModel.displayName))
+            User user =  await userRepository
+                .Find(u => u.displayName == registrationModel.displayName);
+                
+            if (user != null)
             {
                 return Json(new BaseResponse(false, "Name is already taken"));
             }
 
-            User user = new User
+            user = new User
             {
                 displayName = registrationModel.displayName,
                 passwordHash = registrationModel.passHash,
-                language = registrationModel.language,
-                langCode = langCodes.GetCode(registrationModel.language),
+                language = "English",
+                langCode = "en",
                 firebaseToken = registrationModel.firebaseToken
             };
             
-            bool added = userRepository.AddUser(user);
-            if (!added)
-            {
-                return Json(new BaseResponse(false, "An error occurred while adding user"));
-            }
+            await userRepository.Insert(user);
 
             string token = tokenService.Issue(new JwtBody 
             {  
                 issuedAt = (DateTime.UtcNow.Subtract(
                     new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
-                id = user.id.ToString()
+                id = user.Id.ToString()
             });
 
             return Json(new TokenResponse 
@@ -86,7 +86,7 @@ namespace Multilang.Controllers
         [ProducesResponseType(typeof(TokenResponse), 200)]
         public async Task<JsonResult> LogIn([FromBody] LoginModel loginModel)
         {
-            User user = userRepository.FindUser(u => u.displayName == loginModel.displayName 
+            User user = await userRepository.Find(u => u.displayName == loginModel.displayName 
                 && u.passwordHash == loginModel.passHash);
             
             if (user == null)
@@ -98,7 +98,7 @@ namespace Multilang.Controllers
             {  
                 issuedAt = (DateTime.UtcNow.Subtract(
                     new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
-                id = user.id.ToString()
+                id = user.Id.ToString()
             });
 
             return Json(new TokenResponse 
@@ -115,9 +115,10 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("update")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult UpdateAccount([FromBody] UpdateAccountModal accModal, JwtBody jwt)
+        public async Task<JsonResult> UpdateAccount([FromBody] UpdateAccountModal accModal,
+            JwtBody jwt)
         {
-            User user = userRepository.GetUserById(jwt.id);
+            User user = await userRepository.GetById(jwt.id);
             if (user == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
@@ -133,6 +134,7 @@ namespace Multilang.Controllers
                     user.langCode = langCodes.GetCode(user.language);
                 }
 
+                await userRepository.Save();
                 return Json(new BaseResponse(true));
             }
         }
@@ -168,10 +170,15 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpDelete("delete")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public JsonResult DeleteAccount(JwtBody jwt)
+        public async Task<JsonResult> DeleteAccount(JwtBody jwt)
         {
-            bool deleted = userRepository.DeleteUser(jwt.id);
-            return Json(new BaseResponse(deleted, deleted ? null : "User does not exist"));
+            User u = await userRepository.GetById(jwt.id);
+            if (u == null) {
+                Json(new BaseResponse(false, "User does not exist"));
+            }
+            
+            await userRepository.Delete(u);
+            return Json(new BaseResponse(true));
         }
     }
 }

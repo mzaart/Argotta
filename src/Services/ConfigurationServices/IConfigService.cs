@@ -7,5 +7,6 @@ namespace Multilang.Services.ConfigurationServices {
         string GetFirebaseAuthKey();
         string GetGoogleCloudAccountFilePath();
         string GetJwtKey();
+        string GetDbConnectionString();
     }
 }

@@ -1,20 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Multilang.Models.Db
 {
     public class Invitation : IValidatableObject
     {
-
-        // for testing purposes only
-        private static int maxId = 0;
-
-        [Required]
-        [JsonProperty("id")]
-        public string Id { get; set; }
-
+        
         [Required]
         [JsonProperty("accepted")]
         public Boolean accepted { get; set; }
@@ -40,11 +35,6 @@ namespace Multilang.Models.Db
         [Required]
         [JsonProperty("recipient_id")]
         public string recipientId { get; set; }
-
-        public Invitation()
-        {
-            this.Id = maxId++.ToString();
-        }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

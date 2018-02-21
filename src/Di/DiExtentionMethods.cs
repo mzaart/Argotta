@@ -6,9 +6,12 @@ using Multilang.Repositories.UserRepository;
 using Multilang.Services.AuthTokenServices;
 using Multilang.Repositories.ProfilePicRepository;
 using Multilang.Models.Jwt;
+using Multilang.Models.Db;
 using Multilang.Utils;
 using System.Net.Http;
 using Multilang.RequestPipeline.Filters;
+using Multilang.Db.Contexts;
+using Multilang.Repositories;
 
 namespace Microsoft.Extensions.DependencyInjection {
 
@@ -25,12 +28,13 @@ namespace Microsoft.Extensions.DependencyInjection {
 
         public static void addRepositories(this IServiceCollection services) {
             // to be changed
-            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddTransient<IRepository<User>, UserRepository>();
             services.AddTransient<IProfilePicRepository, ProfilePicRepository>();
         }
 
         public static void AddRequiredClasses(this IServiceCollection services) {
             services.AddSingleton<HttpClient>();
+            services.AddScoped<ApplicationDbContext>();
             services.AddTransient<LangCodes>();
         } 
     }
