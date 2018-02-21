@@ -1,8 +1,7 @@
-using Multilang.Services.MessagingServices.Payloads;
 using Multilang.Models.Messages;
 using Newtonsoft.Json;
 
-namespace Multilang.Services.MessagingServices.Payloads {
+namespace Multilang.Models.FirebasePayloads {
 
     public class MessagePayload: BasePayload {
         

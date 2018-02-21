@@ -33,7 +33,7 @@ namespace Multilang.Services.MessagingServices.Firebase
                     { HttpRequestHeader.Authorization.ToString(), 
                         "key = " + config.GetFirebaseAuthKey() },
                 },
-                Content = new StringContent(message.toJson(), 
+                Content = new StringContent(JsonConvert.SerializeObject(message), 
                     Encoding.UTF8, "application/json")
             };
 

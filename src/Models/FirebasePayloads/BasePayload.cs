@@ -1,5 +1,5 @@
 
-namespace Multilang.Services.MessagingServices.Payloads {
+namespace Multilang.Models.FirebasePayloads {
 
     public class BasePayload {
 

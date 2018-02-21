@@ -67,7 +67,9 @@ namespace Multilang.Controllers
             {  
                 issuedAt = (DateTime.UtcNow.Subtract(
                     new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
-                id = user.Id.ToString()
+                id = user.Id.ToString(),
+                displayName = user.displayName,
+                langCode = user.langCode
             });
 
             return Json(new TokenResponse 
@@ -98,7 +100,9 @@ namespace Multilang.Controllers
             {  
                 issuedAt = (DateTime.UtcNow.Subtract(
                     new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
-                id = user.Id.ToString()
+                id = user.Id.ToString(),
+                displayName = user.displayName,
+                langCode = user.langCode
             });
 
             return Json(new TokenResponse 

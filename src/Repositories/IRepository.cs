@@ -10,7 +10,7 @@ namespace Multilang.Repositories
         Task Delete(T entity);
         Task Save();
         Task<T> Find(Predicate<T> predicate);
-        Task<IQueryable<T>> GetAll();
+        IQueryable<T> GetAll();
         Task<T> GetById(string id);
     }
 }

@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Multilang.RequestPipeline.Filters;
 using Multilang.Models.Responses.Invitations;
 using Multilang.Models.Requests.Invitations;
+using Multilang.Repositories;
 
 namespace Multilang.Controllers
 {
@@ -21,10 +22,10 @@ namespace Multilang.Controllers
     [Route("/api/[controller]")]
     public class InvitationController : Controller
     {
-        private IUserRepository userRepository;
+        private IRepository<User> userRepository;
         private IAuthTokenService<JwtBody> tokenService;
 
-        public InvitationController(IUserRepository userRepository, 
+        public InvitationController(IRepository<User> userRepository, 
             IAuthTokenService<JwtBody> tokenService)
         {
             this.userRepository = userRepository;

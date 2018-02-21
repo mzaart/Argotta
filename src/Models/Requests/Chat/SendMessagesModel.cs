@@ -1,13 +1,14 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
 namespace Multilang.Models.Requests.Chat
 {
-    public class SendMessageModel
+    public class SendMessagesModel
     {
         [Required]
-        [JsonProperty("recipient_id")]
-        public string recipientId { get; set; }
+        [JsonProperty("recipient_ids")]
+        public List<string> recipientIds { get; set; }
 
         [Required]
         [JsonProperty("message")]

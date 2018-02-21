@@ -20,5 +20,14 @@ namespace Multilang.Models.Jwt
         [Required]
         [JsonProperty("display_name")]
         public string displayName { get; set; }
+
+        [Required]
+        [RegularExpression(Utils.Validator.ALPHA)]
+        [JsonProperty("lang_code")]
+        public string langCode { get; set; }
+
+        [Required]
+        [RegularExpression(Utils.Validator.ALPHA)]
+        public string language { get; set; }
     }
 }

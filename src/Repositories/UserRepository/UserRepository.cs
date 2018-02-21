@@ -28,9 +28,9 @@ namespace Multilang.Repositories.UserRepository
                 
         }
 
-        public async Task<IQueryable<User>> GetAll()
+        public IQueryable<User> GetAll()
         {
-            return await Task.Run(() => dbContext.Users);
+            return dbContext.Users.AsQueryable();
         }
 
         public async Task<User> GetById(string id)
