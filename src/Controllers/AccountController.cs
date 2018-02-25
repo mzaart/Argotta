@@ -76,7 +76,6 @@ namespace Multilang.Controllers
             { 
                 succeeded = true, 
                 token = token,
-                language = user.language 
             });
         }
 
@@ -88,13 +87,16 @@ namespace Multilang.Controllers
         [ProducesResponseType(typeof(TokenResponse), 200)]
         public async Task<JsonResult> LogIn([FromBody] LoginModel loginModel)
         {
-            User user = await userRepository.Find(u => u.displayName == loginModel.displayName 
-                && u.passwordHash == loginModel.passHash);
+            User user = await userRepository.Find(u =>
+                u.displayName.ToLower() == loginModel.displayName .ToLower()
+                && u.passwordHash.ToLower() == loginModel.passHash.ToLower());
             
             if (user == null)
             {
                 return Json(new BaseResponse(false, "Invalid Credentials"));
             }
+
+            Console.WriteLine("ID: " + user.Id);
 
             string token = tokenService.Issue(new JwtBody 
             {  
@@ -102,14 +104,12 @@ namespace Multilang.Controllers
                     new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
                 id = user.Id.ToString(),
                 displayName = user.displayName,
-                langCode = user.langCode
             });
 
             return Json(new TokenResponse 
             { 
                 succeeded = true, 
                 token = token,
-                language = user.language
             });
         }
 
@@ -118,9 +118,9 @@ namespace Multilang.Controllers
         /// </summary>
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("update")]
-        [ProducesResponseType(typeof(BaseResponse), 200)]
+        [ProducesResponseType(typeof(TokenResponse), 200)]
         public async Task<JsonResult> UpdateAccount([FromBody] UpdateAccountModal accModal,
-            JwtBody jwt)
+            [FromHeader] JwtBody jwt)
         {
             User user = await userRepository.GetById(jwt.id);
             if (user == null)
@@ -132,6 +132,8 @@ namespace Multilang.Controllers
                 if (accModal.displayName != null) user.displayName = accModal.displayName;
                 if (accModal.passwordHash != null) user.passwordHash = accModal.passwordHash;
                 if (accModal.firebaseToken != null) user.firebaseToken = accModal.firebaseToken;
+                if (accModal.fullName != null) user.fullName = accModal.fullName;
+                if (accModal.email != null) user.email = accModal.email;
                 if (accModal.language != null)
                 {
                     user.language = accModal.language;
@@ -139,7 +141,17 @@ namespace Multilang.Controllers
                 }
 
                 await userRepository.Save();
-                return Json(new BaseResponse(true));
+
+                string token = tokenService.Issue(new JwtBody 
+                {  
+                    issuedAt = (DateTime.UtcNow.Subtract(
+                        new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
+                    id = user.Id.ToString(),
+                    displayName = user.displayName,
+                    langCode = user.langCode
+                });
+
+                return Json(new TokenResponse { succeeded = true, token = token });
             }
         }
 
@@ -150,7 +162,7 @@ namespace Multilang.Controllers
         [HttpPost("profilePicture")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
         public async Task<IActionResult> SetProfilePic([FromBody] SetProfilePicModal modal, 
-            JwtBody jwt)
+            [FromHeader] JwtBody jwt)
         {
             bool succeeded = await picRepository.setProfilePic(jwt.id, modal.picBase64);
             return Json(new BaseResponse(succeeded));
@@ -162,7 +174,7 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpGet("profilePicture")]
         [ProducesResponseType(typeof(ProfilePicResponse), 200)]
-        public JsonResult GetProfilePic(JwtBody jwt)
+        public JsonResult GetProfilePic([FromHeader] JwtBody jwt)
         {
             string path = picRepository.getProfilePicPath(jwt.id);
             return Json(new ProfilePicResponse { succeeded = true, picUrl = path });
@@ -174,7 +186,7 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpDelete("delete")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public async Task<JsonResult> DeleteAccount(JwtBody jwt)
+        public async Task<JsonResult> DeleteAccount([FromHeader] JwtBody jwt)
         {
             User u = await userRepository.GetById(jwt.id);
             if (u == null) {

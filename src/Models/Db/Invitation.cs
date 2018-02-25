@@ -24,7 +24,7 @@ namespace Multilang.Models.Db
 
         [Required]
         [JsonProperty("is_group")]
-        public bool isGroup { get { return groupTitle == null; } }
+        public bool isGroup { get { return groupTitle != null; } }
 
         [JsonProperty("group_id")]
         public string groupId { get; set; }

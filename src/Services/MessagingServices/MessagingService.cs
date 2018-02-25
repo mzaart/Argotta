@@ -23,10 +23,10 @@ namespace Multilang.Services.MessagingServices {
             this.translationService = translationService;
         }
 
-        public async Task<Boolean> SendBinary(string senderId, string senderLangCode, User recipient, 
+        public async Task<Boolean> SendBinary(User sender, User recipient, 
             string fileName, string base64Data)
         {
-            var payload = new BinaryPayload(senderId, base64Data, fileName);
+            var payload = new BinaryPayload(sender.Id.ToString(), base64Data, fileName);
 
             var response = await client.Notify(new FcmMessage
             {
@@ -37,10 +37,10 @@ namespace Multilang.Services.MessagingServices {
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> SendBinaries(string senderId, string senderLangCode, 
+        public async Task<bool> SendBinaries(User sender, 
             List<User> recipients, string filename, string base64Data)
         {
-            var payload = new BinaryPayload(senderId, base64Data, filename);
+            var payload = new BinaryPayload(sender.Id.ToString(), base64Data, filename);
             var response = await client.Notify(new FcmMessage
             {
                 registrationIds = recipients.Select(u => u.firebaseToken).ToList(),
@@ -50,16 +50,15 @@ namespace Multilang.Services.MessagingServices {
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<Boolean> SendMessage(string senderId, string senderLangCode,
-            User recipient, string content)
+        public async Task<Boolean> SendMessage(User sender, User recipient, string content)
         {            
             var translatedText = await translationService.Translate(content, recipient.langCode, 
-                senderLangCode);
+                sender.langCode);
 
             var msg = new MessagePayload(new Message 
             {
-                senderId = senderId,
-                senderLangCode = senderLangCode,
+                senderId = sender.Id.ToString(),
+                senderLangCode = sender.langCode,
                 recepientId = recipient.Id.ToString(),
                 recepientLang = recipient.language,
                 time = (long) (DateTime.UtcNow.Subtract(
@@ -77,8 +76,7 @@ namespace Multilang.Services.MessagingServices {
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> SendMessages(string senderId, string senderLangCode, 
-            List<User> recipients, string message)
+        public async Task<bool> SendMessages(User sender, List<User> recipients, string message)
         {
             // group by languages: <lang, users of the same lang>
             Dictionary<string, List<User>> usersByLang = recipients
@@ -90,12 +88,12 @@ namespace Multilang.Services.MessagingServices {
             foreach (var langCode in usersByLang.Keys)
             {
                 var translatedText =  await translationService.Translate(message, langCode, 
-                senderLangCode);
+                sender.langCode);
 
                 var msg = new MessagePayload(new Message 
                 {
-                    senderId = senderId,
-                    senderLangCode = senderLangCode,
+                    senderId = sender.Id.ToString(),
+                    senderLangCode = sender.langCode,
                     time = (long) (DateTime.UtcNow.Subtract(
                         new System.DateTime(1970, 1, 1))).TotalSeconds,
                     content = translatedText
@@ -116,15 +114,31 @@ namespace Multilang.Services.MessagingServices {
                 .Aggregate((b1, b2) => b1 && b2);
         }
 
-        public async Task<bool> NotifyPoorTranslation(string senderDislayName, string senderLanguage, 
+        public async Task<bool> NotifyPoorTranslation(User sender, 
             User recipient, string message)
         {
-            var payload = new PoorTrasnlationPayload(senderDislayName, senderLanguage, message);
+            var payload = new PoorTrasnlationPayload(sender.displayName, sender.language, message);
             var response = await client.Notify(new FcmMessage
             {
                 token = recipient.firebaseToken,
                 notification = new FcmNotification { title = "Translation not understood" },
                 data = payload
+            });
+
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> SendInvitation(Invitation invitation, User sender, User recipient)
+        {
+            string notifTitle = String.Format("{0} wants to chat", sender.displayName);
+            string notifTitleTrasnlated = await translationService
+                .Translate(notifTitle, recipient.langCode, sender.langCode);
+
+            var response = await client.Notify(new FcmMessage 
+            {
+                token = recipient.firebaseToken,
+                notification =  new FcmNotification { title = notifTitleTrasnlated },
+                data = new InvitationPayload(invitation, sender.displayName, sender.langCode)
             });
 
             return response.IsSuccessStatusCode;

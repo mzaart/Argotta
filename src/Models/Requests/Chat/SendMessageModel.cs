@@ -12,10 +12,5 @@ namespace Multilang.Models.Requests.Chat
         [Required]
         [JsonProperty("message")]
         public string message { get; set; }
-
-        [Required]
-        [RegularExpression(Utils.Validator.ALPHA)]
-        [JsonProperty("sender_language")]
-        public string senderLanguage;
     }
 }

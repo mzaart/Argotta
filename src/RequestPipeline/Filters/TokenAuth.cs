@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
@@ -26,17 +27,20 @@ namespace Multilang.RequestPipeline.Filters
                 if(tokenService.IsValid(token))
                 {
                     var body = tokenService.GetData(token);
-                    context.ActionArguments["jwtBody"] = body;
+                    var args = context.ActionArguments;
+                    args.Select(pair => pair.Key)
+                        .Where(k => args[k].GetType() == typeof(JwtBody))
+                        .ToList()
+                        .ForEach(k => args[k] = body);
                 }
                 else
                 {
-                    Console.WriteLine(1);
                     Reject(context, "Invalid Token");
                 }
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Message);
                 Reject(context, "An error occurred while verifying token");
             }
         }

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -24,7 +25,15 @@ namespace Multilang.RequestPipeline.Middlewhere
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.StackTrace);
+                //Console.WriteLine("Exception Message: " + ex.Message);
+                //Console.WriteLine(ex.StackTrace);
+
+                // write error to file
+                var logFile = File.Create("exception.txt");
+                var logWriter = new StreamWriter(logFile);
+                logWriter.WriteLine(ex.ToString());
+                logWriter.Dispose();
+
                 await HandleExceptionAsync(context, ex);
             }
         }
@@ -34,7 +43,7 @@ namespace Multilang.RequestPipeline.Middlewhere
             var code = HttpStatusCode.InternalServerError;
             var result = JsonConvert.SerializeObject(new BaseResponse(false, code.ToString()));
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)code;
+            context.Response.StatusCode = (int) code;
             return context.Response.WriteAsync(result);
         }
     }

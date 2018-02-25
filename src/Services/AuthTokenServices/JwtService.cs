@@ -59,6 +59,7 @@ namespace Multilang.Services.AuthTokenServices
         {
             string[] jwt = jwtTokenBase64.Split('.');
             string json = Base64UrlEncoder.Decode(jwt[1]);
+            Console.WriteLine("JSon: " + json);
             return JsonConvert.DeserializeObject<T>(json);
         }
 

@@ -6,8 +6,8 @@ namespace Multilang.Models.Requests.Invitations
     public class InvitationResponseModel
     {
         [Required]
-        [JsonProperty("invitation_id")]
-        public string invitationId  { get; set; }
+        [JsonProperty("sender_id")]
+        public string senderId  { get; set; }
 
         [Required]
         [JsonProperty("accepted")]

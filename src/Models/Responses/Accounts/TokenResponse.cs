@@ -6,8 +6,5 @@ namespace Multilang.Models.Responses.Accounts
     {
         [JsonProperty("token")]
         public string token;
-
-        [JsonProperty("language")]
-        public string language;
     }
 }

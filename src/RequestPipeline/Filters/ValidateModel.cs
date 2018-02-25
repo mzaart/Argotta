@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
@@ -18,7 +19,17 @@ namespace Multilang.RequestPipeline.Filters
             {
                 if (!context.ModelState.IsValid)
                 {
-                    Console.WriteLine(11);
+                
+                    var errorList = context.ModelState.ToDictionary(
+                        kvp => kvp.Key,
+                        kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                    );
+
+                    foreach (var pair in errorList)
+                    {
+                        Console.WriteLine(pair.Key + ": " + string.Join(", ", pair.Value));
+                    }
+
                     Reject(context, "Invalid Model");
                 }
             }

@@ -15,11 +15,13 @@ namespace api.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Autoincrement", true),
                     blobkedIdsJson = table.Column<string>(nullable: false),
-                    displayName = table.Column<string>(nullable: false),
+                    displayName = table.Column<string>(nullable: true),
+                    email = table.Column<string>(nullable: true),
                     firebaseToken = table.Column<string>(nullable: false),
+                    fullName = table.Column<string>(nullable: true),
                     invitationsJson = table.Column<string>(nullable: false),
-                    langCode = table.Column<string>(nullable: false),
-                    language = table.Column<string>(nullable: false),
+                    langCode = table.Column<string>(nullable: true),
+                    language = table.Column<string>(nullable: true),
                     passwordHash = table.Column<string>(maxLength: 64, nullable: false)
                 },
                 constraints: table =>

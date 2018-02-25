@@ -18,6 +18,8 @@ using System.Collections.Generic;
 namespace Multilang.Controllers
 {
     [ServiceFilter(typeof(TokenAuth))]
+    [ValidateModel]
+    [Route("/api/[controller]")]
     public class ChatController : Controller
     {
         private IMessagingService messagingService;
@@ -34,22 +36,23 @@ namespace Multilang.Controllers
         /// </summary>
         [HttpPost("sendMessage")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public async Task<JsonResult> send([FromBody] SendMessageModel messageModal, JwtBody jwt)
+        public async Task<JsonResult> send([FromBody] SendMessageModel messageModel, 
+            [FromHeader] JwtBody jwtBody)
         {
             // check if user exsts
-            var recipient = await userRepository.GetById(messageModal.recipientId);
-            if (recipient == null)
+            var pair = await GetUserPair(jwtBody.id, messageModel.recipientId);
+            if (pair.Recipient == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
             }
 
-            if (!canSendToUser(jwt.id, recipient))
+            if (!CanSendToUser(jwtBody.id, pair.Recipient))
             {
                 return Json(new BaseResponse(false, "Can not send to user"));
             }
 
             bool sent = await messagingService
-                .SendMessage(jwt.id, jwt.langCode, recipient, messageModal.message);
+                .SendMessage(pair.Sender, pair.Recipient, messageModel.message);
             
             return Json(new BaseResponse(sent, sent ? null : "Message not sent"));
         }
@@ -60,16 +63,17 @@ namespace Multilang.Controllers
         [HttpPost("sendMessages")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
         public async Task<JsonResult> SendMessages([FromBody] SendMessagesModel messageModal, 
-            JwtBody jwt)
+            [FromHeader] JwtBody jwtBody)
         {
             // filter out users
             var recipients = await userRepository
                 .GetAll()
                 .Where(u => messageModal.recipientIds.Contains(u.Id.ToString()))
-                .Where(u => canSendToUser(jwt.id, u))
+                .Where(u => CanSendToUser(jwtBody.id, u))
                 .ToListAsync();
 
-            bool sent = await messagingService.SendMessages(jwt.id, jwt.langCode, recipients, 
+            var sender = await userRepository.GetById(jwtBody.id);
+            bool sent = await messagingService.SendMessages(sender, recipients, 
                 messageModal.message);
 
             return Json(new BaseResponse(sent, sent ? null : "Not all users received message"));
@@ -81,22 +85,22 @@ namespace Multilang.Controllers
         [HttpPost("sendBinary")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
         public async Task<JsonResult> sendBinary([FromBody] SendBinaryModel binaryModel, 
-            JwtBody jwt)
+            [FromHeader] JwtBody jwtBody)
         {
             // check if user exsts
-            var recipient = await userRepository.GetById(binaryModel.recipientId);
-            if (recipient == null)
+            var pair = await GetUserPair(jwtBody.id, binaryModel.recipientId);
+            if (pair.Recipient == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
             }
 
-            if (!canSendToUser(jwt.id, recipient))
+            if (!CanSendToUser(jwtBody.id, pair.Recipient))
             {
                 return Json(new BaseResponse(false, "Can not send to user"));
             }
             
             bool sent = await messagingService
-                .SendBinary(jwt.id, jwt.langCode, recipient, binaryModel.fileName, 
+                .SendBinary(pair.Sender, pair.Recipient, binaryModel.fileName, 
                     binaryModel.base64Data);
             
             return Json(new BaseResponse(sent, sent ? null : "Message not sent"));
@@ -108,16 +112,17 @@ namespace Multilang.Controllers
         [HttpPost("sendBinaries")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
         public async Task<JsonResult> SendBinaries([FromBody] SendBinariesModel binariesModel, 
-            JwtBody jwt)
+            [FromHeader] JwtBody jwtBody)
         {
             // filter out users
             var recipients = await userRepository
                 .GetAll()
                 .Where(u => binariesModel.recipientIds.Contains(u.Id.ToString()))
-                .Where(u => canSendToUser(jwt.id, u))
+                .Where(u => CanSendToUser(jwtBody.id, u))
                 .ToListAsync();
 
-            bool sent = await messagingService.SendBinaries(jwt.id, jwt.langCode, recipients, 
+            var sender = await userRepository.GetById(jwtBody.id);
+            bool sent = await messagingService.SendBinaries(sender, recipients, 
                 binariesModel.fileName , binariesModel.base64Data);
 
             return Json(new BaseResponse(sent, sent ? null : "Not all users received message"));
@@ -129,27 +134,45 @@ namespace Multilang.Controllers
         [HttpPost("poorTranslation")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
         public async Task<JsonResult> poorTranslation([FromBody] PoorTranslationModel translationModel, 
-            JwtBody jwt)
+            [FromHeader] JwtBody jwtBody)
         {
             // check if user exsts
-            var recipient = await userRepository.GetById(translationModel.recipientId);
-            if (recipient == null)
+            var pair = await GetUserPair(jwtBody.id, translationModel.recipientId);
+            if (pair.Recipient == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
             }
 
-            if (!canSendToUser(jwt.id, recipient))
+            if (!CanSendToUser(jwtBody.id, pair.Recipient))
             {
                 return Json(new BaseResponse(false, "Can not send to user"));
             }
 
-            bool sent = await messagingService.NotifyPoorTranslation(jwt.displayName, jwt.language,
-                recipient, translationModel.message);
+            bool sent = await messagingService.NotifyPoorTranslation(pair.Sender,
+                pair.Recipient, translationModel.message);
 
             return Json(new BaseResponse(sent, sent ? null : "Not all users received message"));
         }
 
-        private bool canSendToUser(string senderId, User recipient)
+        // returns (sender, recepient)
+        private async Task<(User Sender, User Recipient)> GetUserPair(string senderId, 
+            string recipientId) 
+        {
+            var users = await userRepository
+                            .GetAll()
+                            .Where(u => u.Id.ToString() == senderId 
+                                || u.Id.ToString() == recipientId)
+                            .ToListAsync();
+
+            Console.WriteLine(senderId);
+            var sender = users.First(u => u.Id.ToString() == senderId);
+            var recipient = users.FirstOrDefault(u => u.Id.ToString() == recipientId);
+              
+            //return new User[] {sender, recipient};
+            return (Sender: sender, Recipient: recipient);
+        }
+
+        private bool CanSendToUser(string senderId, User recipient)
         {   
             if (recipient.blockedIds.Contains(senderId))
             {

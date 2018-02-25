@@ -19,18 +19,20 @@ namespace Multilang.Models.Db {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
         public int Id { get; set; }
 
-        [Required]
         [RegularExpression(Utils.Validator.ALPHA)]
         public string language { get; set; }
 
-        [Required]
         [RegularExpression(Utils.Validator.ALPHA)]
         public string langCode { get; set; }
 
-        [Required]
         [RegularExpression(Utils.Validator.ALPHA_SPACE)]
         public string displayName { get; set; }
 
+        [RegularExpression(Utils.Validator.ALPHA_SPACE)]
+        public string fullName { get; set; }
+
+        public string email { get; set; }
+        
         [Required]
         [StringLength(64, MinimumLength=64)]
         public string passwordHash { get; set; }

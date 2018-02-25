@@ -10,11 +10,14 @@ using Multilang.Utils;
 using Multilang.Services.AuthTokenServices;
 using Multilang.Models.Jwt;
 using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Multilang.RequestPipeline.Filters;
 using Multilang.Models.Responses.Invitations;
 using Multilang.Models.Requests.Invitations;
 using Multilang.Repositories;
+using Multilang.Services.MessagingServices;
 
 namespace Multilang.Controllers
 {
@@ -38,7 +41,7 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpGet("invitations")]
         [ProducesResponseType(typeof(GetInvitationsResponse), 200)]
-        public async Task<JsonResult> GetInvitations(JwtBody jwt) 
+        public async Task<JsonResult> GetInvitations([FromHeader] JwtBody jwt) 
         {   
             User user = await userRepository.GetById(jwt.id);
             if (user == null)
@@ -59,26 +62,38 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("invitations")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public async Task<JsonResult> Invite([FromBody] RecipientModel recipient, JwtBody jwt)
+        public async Task<JsonResult> Invite([FromBody] RecipientModel model, 
+            [FromServices] IMessagingService messagingService, [FromHeader] JwtBody jwt)
         {
-            User user = await userRepository.GetById(recipient.recipientId);
-            if (user == null)
+            var users = await userRepository
+                            .GetAll()
+                            .Where(u => u.Id.ToString() == jwt.id || u.Id.ToString() == model.recipientId)
+                            .ToListAsync();
+
+            var sender = users.First(u => u.Id.ToString() == jwt.id);
+            var recipient = users.FirstOrDefault(u => u.Id.ToString() == model.recipientId);
+
+            if (recipient == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
             }
 
-            if (user.blockedIds.Contains(jwt.id))
+            if (recipient.blockedIds.Contains(jwt.id))
             {
                 return Json(new BaseResponse(false, "Blocked by user"));
             }
 
-            user.invitations.Add(new Invitation
+            var inv = new Invitation
             {
                 senderId = jwt.id,
                 senderDisplayName = jwt.displayName,
-            });
+            };
+
+            recipient.invitations.Add(inv);
 
             await userRepository.Save();
+            await messagingService.SendInvitation(inv, sender, recipient);
+
             return Json(new BaseResponse(true));
         }
 
@@ -89,7 +104,7 @@ namespace Multilang.Controllers
         [HttpPost("Respond")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
         public async Task<JsonResult> Respond([FromBody] InvitationResponseModel invitationModel, 
-            JwtBody jwt)
+            [FromHeader] JwtBody jwt)
         {
             User user = await userRepository.GetById(jwt.id);
             if (user == null)
@@ -97,7 +112,7 @@ namespace Multilang.Controllers
                 return Json(new BaseResponse(false, "User does not exist"));
             }
 
-            var invitation = user.invitations.Find(i => i.senderId == invitationModel.invitationId);
+            var invitation = user.invitations.Find(i => i.senderId == invitationModel.senderId);
             
             if (invitation == null)
             {
@@ -123,9 +138,9 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("block")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public async Task<JsonResult> Block([FromBody] RecipientModel recipient, JwtBody jwt)
+        public async Task<JsonResult> Block([FromBody] RecipientModel recipient, [FromHeader] JwtBody jwt)
         {
-            User user =await userRepository.GetById(jwt.id);
+            User user = await userRepository.GetById(jwt.id);
             if (user == null)
             {
                 return Json(new BaseResponse(false, "User does not exist"));
@@ -137,6 +152,7 @@ namespace Multilang.Controllers
             }
 
             user.blockedIds.Add(recipient.recipientId);
+            user.invitations.RemoveAll(i => i.senderId == recipient.recipientId);
 
             await userRepository.Save();
             return Json(new BaseResponse(true));
@@ -148,7 +164,7 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpDelete("block")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public async Task<JsonResult> UnBlock([FromBody] RecipientModel recipient, JwtBody jwt)
+        public async Task<JsonResult> UnBlock([FromBody] RecipientModel recipient, [FromHeader] JwtBody jwt)
         {
             User user = await userRepository.GetById(jwt.id);
             if (user == null)

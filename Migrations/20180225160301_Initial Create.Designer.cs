@@ -8,7 +8,7 @@ using Multilang.Db.Contexts;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180221085132_InitialCreate")]
+    [Migration("20180225160301_Initial Create")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,20 +24,21 @@ namespace api.Migrations
                     b.Property<string>("blobkedIdsJson")
                         .IsRequired();
 
-                    b.Property<string>("displayName")
-                        .IsRequired();
+                    b.Property<string>("displayName");
+
+                    b.Property<string>("email");
 
                     b.Property<string>("firebaseToken")
                         .IsRequired();
 
+                    b.Property<string>("fullName");
+
                     b.Property<string>("invitationsJson")
                         .IsRequired();
 
-                    b.Property<string>("langCode")
-                        .IsRequired();
+                    b.Property<string>("langCode");
 
-                    b.Property<string>("language")
-                        .IsRequired();
+                    b.Property<string>("language");
 
                     b.Property<string>("passwordHash")
                         .IsRequired()
