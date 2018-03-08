@@ -64,11 +64,13 @@ namespace Multilang
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseMiddleware<LoggingMiddleWhere>();
             app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseStaticFiles();            
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddFile($"logs/logs-{DateTime.UtcNow.Date.ToString("f")}");
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();

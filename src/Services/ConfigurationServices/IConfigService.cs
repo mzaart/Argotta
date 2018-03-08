@@ -8,5 +8,6 @@ namespace Multilang.Services.ConfigurationServices {
         string GetGoogleCloudAccountFilePath();
         string GetJwtKey();
         string GetDbConnectionString();
+        string GetLoggingDir();
     }
 }

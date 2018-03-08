@@ -44,6 +44,7 @@ namespace Multilang.Controllers
         public async Task<JsonResult> Register([FromBody] RegistrationModel registrationModel,
             [FromServices] LangCodes langCodes)
         {
+            Console.WriteLine(registrationModel == null);
             User user =  await userRepository
                 .Find(u => u.displayName == registrationModel.displayName);
                 

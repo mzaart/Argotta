@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Multilang.Models.Responses;
+using Multilang.Services.LoggingServices;
 using Newtonsoft.Json;
 
 namespace Multilang.RequestPipeline.Middlewhere
@@ -11,10 +12,12 @@ namespace Multilang.RequestPipeline.Middlewhere
     public class ErrorHandlingMiddleware
     {
         private readonly RequestDelegate next;
+        private ILoggingService logger;
 
-        public ErrorHandlingMiddleware(RequestDelegate next)
+        public ErrorHandlingMiddleware(RequestDelegate next, ILoggingService logger)
         {
             this.next = next;
+            this.logger = logger;
         }
 
         public async Task Invoke(HttpContext context /* other scoped dependencies */)
@@ -25,15 +28,8 @@ namespace Multilang.RequestPipeline.Middlewhere
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Exception Message: " + ex.Message);
-                //Console.WriteLine(ex.StackTrace);
-
-                // write error to file
-                var logFile = File.Create("exception.txt");
-                var logWriter = new StreamWriter(logFile);
-                logWriter.WriteLine(ex.ToString());
-                logWriter.Dispose();
-
+                Console.WriteLine(ex.ToString());
+                await logger.LogException(ex);
                 await HandleExceptionAsync(context, ex);
             }
         }

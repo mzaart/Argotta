@@ -12,6 +12,7 @@ using System.Net.Http;
 using Multilang.RequestPipeline.Filters;
 using Multilang.Db.Contexts;
 using Multilang.Repositories;
+using Multilang.Services.LoggingServices;
 
 namespace Microsoft.Extensions.DependencyInjection {
 
@@ -34,6 +35,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 
         public static void AddRequiredClasses(this IServiceCollection services) {
             services.AddSingleton<HttpClient>();
+            services.AddSingleton<ILoggingService, LoggingService>();
             services.AddScoped<ApplicationDbContext>();
             services.AddTransient<LangCodes>();
         } 

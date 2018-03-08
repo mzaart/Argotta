@@ -23,6 +23,11 @@ namespace Multilang.Services.ConfigurationServices {
             return config["ConnectionString"];
         }
 
+        public string GetLoggingDir()
+        {
+            return config["Logs:Dir"];
+        }
+
         string IConfigService.GetFirbaseUrl()
         {
             return config["Firebase:Url"];
