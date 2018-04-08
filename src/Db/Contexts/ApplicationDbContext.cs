@@ -16,6 +16,7 @@ namespace Multilang.Db.Contexts
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

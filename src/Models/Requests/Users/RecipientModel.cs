@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace Multilang.Models.Requests.Invitations
+namespace Multilang.Models.Requests.Users
 {
     public class RecipientModel
     {

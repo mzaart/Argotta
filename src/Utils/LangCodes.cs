@@ -16,6 +16,9 @@ namespace Multilang.Utils
             this.langCodes = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
         }
 
+        // for mocking
+        public LangCodes() {}
+
         public string GetCode(string language)
         {
             if (!langCodes.ContainsKey(language)) {

@@ -178,11 +178,6 @@ namespace Multilang.Controllers
             {
                 return false;
             }
-            
-            if (!recipient.invitations.Exists(i => i.senderId == senderId))
-            {
-                return false;
-            }
 
             return true;
         }

@@ -30,6 +30,7 @@ namespace Microsoft.Extensions.DependencyInjection {
         public static void addRepositories(this IServiceCollection services) {
             // to be changed
             services.AddTransient<IRepository<User>, UserRepository>();
+            services.AddTransient<IRepository<Group>, GroupRepository>();
             services.AddTransient<IProfilePicRepository, ProfilePicRepository>();
         }
 

@@ -7,7 +7,7 @@ namespace Multilang.Models.Requests.Accounts
     public class LoginModel
     {
         [Required]
-        [RegularExpression(Utils.Validator.ALPHA_SPACE)]
+        [RegularExpression(Utils.Validator.ALPHA_NUM)]
         public string displayName { get; set; }
 
         [StringLength(64, MinimumLength=64)]

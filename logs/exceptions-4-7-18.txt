@@ -1,0 +1,14 @@
+
+
+Saturday, April 7, 2018 3:47 PM:
+Messages: HTTP method "POST" & path "api/Groups/sendMessage" overloaded by actions - Multilang.Controllers.GroupsController.SendMessage (MultiLang),Multilang.Controllers.GroupsController.SendBinary (MultiLang). Actions require unique method/path combination for Swagger
+System.NotSupportedException: HTTP method "POST" & path "api/Groups/sendMessage" overloaded by actions - Multilang.Controllers.GroupsController.SendMessage (MultiLang),Multilang.Controllers.GroupsController.SendBinary (MultiLang). Actions require unique method/path combination for Swagger
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreatePathItem(IEnumerable`1 apiDescriptions, ISchemaRegistry schemaRegistry)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath, String[] schemes)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Multilang.RequestPipeline.Middlewhere.ErrorHandlingMiddleware.<Invoke>d__3.MoveNext() in /home/mouhammed/MZ/Coding/Projects/MultiLang/MultiLang/src/RequestPipeline/Middlewhere/ErrorHandlingMiddlewhere.cs:line 27

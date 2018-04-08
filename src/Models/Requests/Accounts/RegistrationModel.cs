@@ -7,7 +7,7 @@ namespace Multilang.Models.Requests.Accounts
     public class RegistrationModel
     {
         [Required]
-        [RegularExpression(Utils.Validator.ALPHA_SPACE)]
+        [RegularExpression(Utils.Validator.ALPHA_NUM)]
         [JsonProperty("display_name")]
         public string displayName { get; set; }
 
