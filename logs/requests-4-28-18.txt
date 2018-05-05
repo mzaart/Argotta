@@ -1,0 +1,2309 @@
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Upgrade-Insecure-Requests": [
+    "1"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/css/reset.css
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/css/typography.css
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/object-assign-pollyfill.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery.slideto.min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/css/screen.css
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery-1.8.0.min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery.wiggle.min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/handlebars-4.0.5.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery.ba-bbq.min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/backbone-min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/lodash.min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/highlight.9.1.0.pack.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/swagger-ui.min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/highlight.9.1.0.pack_extended.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/jsoneditor.min.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/marked.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/lib/swagger-oauth.js
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/images/logo_small.png
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/css/print.css
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/v1/swagger.json
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "application/json;charset=utf-8,*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/images/favicon-32x32.png
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/images/favicon-16x16.png
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: GET
+Endpoint: /swagger/images/throbber.gif
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/css/screen.css"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:00 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "62"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "displayName": "mzaartdprime",
+  "pass_hash": "12345678"
+}
+
+
+Saturday, April 28, 2018 11:01 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "118"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "displayName": "mzaartdprime",
+  "pass_hash": "EF797C8118F02DFB649607DD5D3F8C7623048C9C063D532CC95C5ED7A898A64F"
+}
+
+
+Saturday, April 28, 2018 11:01 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "117"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "displayName": "mzaartprime",
+  "pass_hash": "EF797C8118F02DFB649607DD5D3F8C7623048C9C063D532CC95C5ED7A898A64F"
+}
+
+
+Saturday, April 28, 2018 11:01 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "118"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "displayName": "mzaarttprime",
+  "pass_hash": "EF797C8118F02DFB649607DD5D3F8C7623048C9C063D532CC95C5ED7A898A64F"
+}
+
+
+Saturday, April 28, 2018 11:01 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "118"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "displayName": "mzaartdprime",
+  "pass_hash": "EF797C8118F02DFB649607DD5D3F8C7623048C9C063D532CC95C5ED7A898A64F"
+}
+
+
+Saturday, April 28, 2018 11:01 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "118"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "displayName": "mzaartdprime",
+  "pass_hash": "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3"
+}
+
+
+Saturday, April 28, 2018 11:03 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "112"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "displayName": "mzaart",
+  "pass_hash": "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3"
+}
+
+
+Saturday, April 28, 2018 11:03 AM:
+Method: GET
+Endpoint: /swagger/v1/swagger.json
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "application/json;charset=utf-8,*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Authorization": [
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOiIxNTI0OTEzMzgzLjA0MzUzIiwiaWQiOiIxIiwiZGlzcGxheV9uYW1lIjoibXphYXJ0IiwibGFuZ19jb2RlIjpudWxsLCJsYW5ndWFnZSI6bnVsbH0.URvDJcECtnMHqzKFNRPLgvAzOUDvyGrF07WM3PksP3U"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:03 AM:
+Method: GET
+Endpoint: /api/Users/getUser
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Authorization": [
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOiIxNTI0OTEzMzgzLjA0MzUzIiwiaWQiOiIxIiwiZGlzcGxheV9uYW1lIjoibXphYXJ0IiwibGFuZ19jb2RlIjpudWxsLCJsYW5ndWFnZSI6bnVsbH0.URvDJcECtnMHqzKFNRPLgvAzOUDvyGrF07WM3PksP3U"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: ?id=1
+Body: 
+
+
+Saturday, April 28, 2018 11:04 AM:
+Method: POST
+Endpoint: /api/Account/update
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "36"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Authorization": [
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOiIxNTI0OTEzMzgzLjA0MzUzIiwiaWQiOiIxIiwiZGlzcGxheV9uYW1lIjoibXphYXJ0IiwibGFuZ19jb2RlIjpudWxsLCJsYW5ndWFnZSI6bnVsbH0.URvDJcECtnMHqzKFNRPLgvAzOUDvyGrF07WM3PksP3U"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "email": "mae98@mail.aub.edu",
+}
+
+
+Saturday, April 28, 2018 11:04 AM:
+Method: GET
+Endpoint: /api/Users/getUser
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Authorization": [
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOiIxNTI0OTEzMzgzLjA0MzUzIiwiaWQiOiIxIiwiZGlzcGxheV9uYW1lIjoibXphYXJ0IiwibGFuZ19jb2RlIjpudWxsLCJsYW5ndWFnZSI6bnVsbH0.URvDJcECtnMHqzKFNRPLgvAzOUDvyGrF07WM3PksP3U"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: ?id=1
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Upgrade-Insecure-Requests": [
+    "1"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/css/typography.css
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/css/reset.css
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/object-assign-pollyfill.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery.slideto.min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/css/screen.css
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery-1.8.0.min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery.ba-bbq.min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/jquery.wiggle.min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/lodash.min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/backbone-min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/swagger-ui.min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/highlight.9.1.0.pack.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/jsoneditor.min.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/marked.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/highlight.9.1.0.pack_extended.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/lib/swagger-oauth.js
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/images/logo_small.png
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/css/print.css
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "text/css,*/*;q=0.1"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/v1/swagger.json
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "application/json;charset=utf-8,*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/images/favicon-32x32.png
+Headers: {
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Connection": [
+    "keep-alive"
+  ],
+  "Pragma": [
+    "no-cache"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/images/favicon-16x16.png
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "If-Modified-Since": [
+    "Fri, 31 Dec 9999 23:59:59 GMT"
+  ],
+  "If-None-Match": [
+    "\"24c85a5ed127a83d\""
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:08 AM:
+Method: GET
+Endpoint: /swagger/images/throbber.gif
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "image/webp,image/apng,image/*,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "If-Modified-Since": [
+    "Fri, 31 Dec 9999 23:59:59 GMT"
+  ],
+  "If-None-Match": [
+    "\"24c85a5ed1278da9\""
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/css/screen.css"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:09 AM:
+Method: POST
+Endpoint: /api/Account/login
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Content-Length": [
+    "295"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ],
+  "Origin": [
+    "http://localhost:5000"
+  ]
+}
+Query: 
+Body: {
+  "display_name": "mzaart",
+  "pass_hash": "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3",
+  "firebase_token": "cVSVtEh1_5E:AMZAARTPA91bEyyshwzlYdqmQUX6hH8b80QPMEq8-UkOCitlhwjvr2qMh1zKEjYQTKn17Ht6YwemQSBu7esVQFrmwui4phY84-kShAkHXMuhsnytzzpr-9k04rABLdYL-MdyQBgj7Zh-K_gdwV"
+}
+
+
+Saturday, April 28, 2018 11:09 AM:
+Method: GET
+Endpoint: /api/Users/getUser
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: ?id=1
+Body: 
+
+
+Saturday, April 28, 2018 11:09 AM:
+Method: GET
+Endpoint: /swagger/v1/swagger.json
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "application/json;charset=utf-8,*/*"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Authorization": [
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOiIxNTI0OTEzNzU0LjM0NjQiLCJpZCI6IjEiLCJkaXNwbGF5X25hbWUiOiJtemFhcnQiLCJsYW5nX2NvZGUiOm51bGwsImxhbmd1YWdlIjpudWxsfQ.rGn-dB9NVZ5V9T5RoVye8DLYqLEc8jBREfAQMIIN2J0"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: 
+Body: 
+
+
+Saturday, April 28, 2018 11:09 AM:
+Method: GET
+Endpoint: /api/Users/getUser
+Headers: {
+  "Connection": [
+    "keep-alive"
+  ],
+  "Accept": [
+    "text/plain"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "en-US,en;q=0.9,ar;q=0.8"
+  ],
+  "Authorization": [
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOiIxNTI0OTEzNzU0LjM0NjQiLCJpZCI6IjEiLCJkaXNwbGF5X25hbWUiOiJtemFhcnQiLCJsYW5nX2NvZGUiOm51bGwsImxhbmd1YWdlIjpudWxsfQ.rGn-dB9NVZ5V9T5RoVye8DLYqLEc8jBREfAQMIIN2J0"
+  ],
+  "Cookie": [
+    "Idea-28f3846f=97c4c967-fa0a-4089-b2c9-4d6358383978"
+  ],
+  "Host": [
+    "localhost:5000"
+  ],
+  "Referer": [
+    "http://localhost:5000/swagger/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+  ]
+}
+Query: ?id=1
+Body: 

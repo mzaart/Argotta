@@ -23,6 +23,10 @@ namespace Multilang.Models.Jwt
         public string langCode { get; set; }
 
         [RegularExpression(Utils.Validator.ALPHA)]
+        [JsonProperty("language")]
         public string language { get; set; }
+
+        [JsonProperty("translation_engine")]
+        public int translationEngine { get; set; }
     }
 }

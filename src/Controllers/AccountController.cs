@@ -45,9 +45,9 @@ namespace Multilang.Controllers
             [FromServices] LangCodes langCodes)
         {
             Console.WriteLine(registrationModel == null);
-            User user =  await userRepository
+            User user = await userRepository
                 .Find(u => u.displayName == registrationModel.displayName);
-                
+
             if (user != null)
             {
                 return Json(new BaseResponse(false, "Name is already taken"));
@@ -61,11 +61,11 @@ namespace Multilang.Controllers
                 langCode = "en",
                 firebaseToken = registrationModel.firebaseToken
             };
-            
+
             await userRepository.Insert(user);
 
-            string token = tokenService.Issue(new JwtBody 
-            {  
+            string token = tokenService.Issue(new JwtBody
+            {
                 issuedAt = (DateTime.UtcNow.Subtract(
                     new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
                 id = user.Id.ToString(),
@@ -73,9 +73,9 @@ namespace Multilang.Controllers
                 langCode = user.langCode
             });
 
-            return Json(new TokenResponse 
-            { 
-                succeeded = true, 
+            return Json(new TokenResponse
+            {
+                succeeded = true,
                 token = token,
             });
         }
@@ -85,32 +85,39 @@ namespace Multilang.Controllers
         /// </summary>
         /// <returns>Authorization Token</returns>
         [HttpPost("login")]
-        [ProducesResponseType(typeof(TokenResponse), 200)]
+        [ProducesResponseType(typeof(LoggedInResponse), 200)]
         public async Task<JsonResult> LogIn([FromBody] LoginModel loginModel)
         {
             User user = await userRepository.Find(u =>
-                u.displayName.ToLower() == loginModel.displayName .ToLower()
+                u.displayName.ToLower() == loginModel.displayName.ToLower()
                 && u.passwordHash.ToLower() == loginModel.passHash.ToLower());
-            
+
             if (user == null)
             {
                 return Json(new BaseResponse(false, "Invalid Credentials"));
             }
 
-            Console.WriteLine("ID: " + user.Id);
+            user.firebaseToken = loginModel.firebaseToken;
+            await userRepository.Save();
 
-            string token = tokenService.Issue(new JwtBody 
-            {  
+            string token = tokenService.Issue(new JwtBody
+            {
                 issuedAt = (DateTime.UtcNow.Subtract(
                     new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
                 id = user.Id.ToString(),
                 displayName = user.displayName,
             });
 
-            return Json(new TokenResponse 
-            { 
-                succeeded = true, 
+            return Json(new LoggedInResponse
+            {
+                succeeded = true,
                 token = token,
+                Id = user.Id,
+                langCode = user.langCode,
+                language = user.language,
+                displayName = user.displayName,
+                fullName = user.fullName,
+                email = user.email,
             });
         }
 
@@ -143,13 +150,14 @@ namespace Multilang.Controllers
 
                 await userRepository.Save();
 
-                string token = tokenService.Issue(new JwtBody 
-                {  
+                string token = tokenService.Issue(new JwtBody
+                {
                     issuedAt = (DateTime.UtcNow.Subtract(
                         new System.DateTime(1970, 1, 1))).TotalSeconds.ToString(),
                     id = user.Id.ToString(),
                     displayName = user.displayName,
-                    langCode = user.langCode
+                    langCode = user.langCode,
+                    translationEngine = accModal.translationEngine
                 });
 
                 return Json(new TokenResponse { succeeded = true, token = token });
@@ -162,7 +170,7 @@ namespace Multilang.Controllers
         [ServiceFilter(typeof(TokenAuth))]
         [HttpPost("profilePicture")]
         [ProducesResponseType(typeof(BaseResponse), 200)]
-        public async Task<IActionResult> SetProfilePic([FromBody] SetProfilePicModal modal, 
+        public async Task<IActionResult> SetProfilePic([FromBody] SetProfilePicModal modal,
             [FromHeader] JwtBody jwt)
         {
             bool succeeded = await picRepository.setProfilePic(jwt.id, modal.picBase64);
@@ -190,10 +198,11 @@ namespace Multilang.Controllers
         public async Task<JsonResult> DeleteAccount([FromHeader] JwtBody jwt)
         {
             User u = await userRepository.GetById(jwt.id);
-            if (u == null) {
+            if (u == null)
+            {
                 Json(new BaseResponse(false, "User does not exist"));
             }
-            
+
             await userRepository.Delete(u);
             return Json(new BaseResponse(true));
         }

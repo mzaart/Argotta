@@ -20,7 +20,8 @@ namespace Multilang.Db.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(config.GetDbConnectionString());
+            //optionsBuilder.UseSqlite(config.GetDbConnectionString());
+            optionsBuilder.UseSqlServer(config.GetDbConnectionString());
         }
     }
 }

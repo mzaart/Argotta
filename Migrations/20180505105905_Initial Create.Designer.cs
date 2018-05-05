@@ -5,16 +5,17 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Multilang.Db.Contexts;
 
-namespace api.Migrations
+namespace MultiLang.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180408135740_GroupsMigration")]
-    partial class GroupsMigration
+    [Migration("20180505105905_Initial Create")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.1");
+                .HasAnnotation("ProductVersion", "1.0.1")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Multilang.Models.Db.Group", b =>
                 {
@@ -58,6 +59,8 @@ namespace api.Migrations
                     b.Property<string>("passwordHash")
                         .IsRequired()
                         .HasMaxLength(64);
+
+                    b.Property<int>("translationEngine");
 
                     b.HasKey("Id");
 

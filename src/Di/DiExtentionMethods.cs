@@ -13,6 +13,7 @@ using Multilang.RequestPipeline.Filters;
 using Multilang.Db.Contexts;
 using Multilang.Repositories;
 using Multilang.Services.LoggingServices;
+using System;
 
 namespace Microsoft.Extensions.DependencyInjection {
 
@@ -25,6 +26,10 @@ namespace Microsoft.Extensions.DependencyInjection {
             services.AddSingleton<IConfigService, Config>();
             services.AddTransient<IAuthTokenService<JwtBody>, JwtService<JwtBody>>();
             services.AddTransient<TokenAuth>();
+
+            services.AddTransient<UnofficialTranslationService>();
+            services.AddTransient<AzureTranslationService>();
+            services.AddTransient<TranslationServiceFactory>();
         }
 
         public static void addRepositories(this IServiceCollection services) {
@@ -39,6 +44,7 @@ namespace Microsoft.Extensions.DependencyInjection {
             services.AddSingleton<ILoggingService, LoggingService>();
             services.AddScoped<ApplicationDbContext>();
             services.AddTransient<LangCodes>();
+            services.AddTransient<TransientVars>();
         } 
     }
 }

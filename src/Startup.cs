@@ -58,7 +58,8 @@ namespace Multilang
             });
 
             // entity framework
-            services.AddEntityFrameworkSqlite().AddDbContext<ApplicationDbContext>();
+            //services.AddEntityFrameworkSqlite().AddDbContext<ApplicationDbContext>();
+            services.AddEntityFrameworkSqlServer().AddDbContext<ApplicationDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

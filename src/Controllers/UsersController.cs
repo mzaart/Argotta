@@ -5,6 +5,7 @@ using Multilang.Models.Db;
 using Multilang.Models.Jwt;
 using Multilang.Models.Requests.Users;
 using Multilang.Models.Responses;
+using Multilang.Models.Responses.Users;
 using Multilang.Repositories;
 using Multilang.RequestPipeline.Filters;
 using Multilang.Services.AuthTokenServices;
@@ -19,7 +20,7 @@ namespace Multilang.Controllers
         private IRepository<User> userRepository;
         private IAuthTokenService<JwtBody> tokenService;
 
-        public UsersController(IRepository<User> userRepository, 
+        public UsersController(IRepository<User> userRepository,
             IAuthTokenService<JwtBody> tokenService)
         {
             this.userRepository = userRepository;
@@ -35,16 +36,44 @@ namespace Multilang.Controllers
         {
             return new UsersResponse
             {
-                succeeded = true,
                 Users = userRepository
                     .GetAll()
-                    .Select(u => new UsersResponse.User
+                    .Select(u => new UserResponse
                     {
-                        Id = u.Id.ToString(),
-                        UserName = u.displayName
+                        Id = u.Id,
+                        langCode = u.langCode,
+                        language = u.language,
+                        displayName = u.displayName,
+                        fullName = u.fullName,
+                        email = u.email,
+                        firebaseToken = u.firebaseToken
                     })
                     .ToList()
             };
+        }
+
+        [HttpGet("getUser")]
+        [ProducesResponseType(typeof(UserResponse), 200)]
+        public async Task<JsonResult> GetUser([FromQuery] int id)
+        {
+            var user = await userRepository.GetById(id.ToString());
+            if (user == null)
+            {
+                return Json(new BaseResponse(false, "User does not exixst"));
+            }
+            else
+            {
+                return Json(new UserResponse
+                {
+                    Id = user.Id,
+                    langCode = user.langCode,
+                    language = user.language,
+                    displayName = user.displayName,
+                    fullName = user.fullName,
+                    email = user.email,
+                    firebaseToken = user.firebaseToken
+                });
+            }
         }
 
         /// <summary>

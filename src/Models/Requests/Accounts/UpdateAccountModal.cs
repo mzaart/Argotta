@@ -15,7 +15,6 @@ namespace Multilang.Models.Db
         [JsonProperty("full_name")]
         public string fullName { get; set; }
 
-        [RegularExpression("email")]
         [JsonProperty("email")]
         public string email { get; set; }
 
@@ -33,5 +32,8 @@ namespace Multilang.Models.Db
 
         [JsonProperty("firebase_token")]
         public string firebaseToken { get; set; }
+
+        [JsonProperty("translation_engine")]
+        public int translationEngine { get; set; }
     }
 }

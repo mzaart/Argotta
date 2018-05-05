@@ -18,6 +18,11 @@ namespace Multilang.Services.ConfigurationServices {
                 .Build();
         }
 
+        public string GetAzureTranslationKey()
+        {
+            return config["AzureTranslation:9a2fba344ee241409d6c0b6d01acb801"];
+        }
+
         public string GetDbConnectionString()
         {
             return config["ConnectionString"];

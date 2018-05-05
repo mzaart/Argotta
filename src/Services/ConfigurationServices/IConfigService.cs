@@ -6,6 +6,7 @@ namespace Multilang.Services.ConfigurationServices {
         string GetFirbaseUrl();
         string GetFirebaseAuthKey();
         string GetGoogleCloudAccountFilePath();
+        string GetAzureTranslationKey();
         string GetJwtKey();
         string GetDbConnectionString();
         string GetLoggingDir();

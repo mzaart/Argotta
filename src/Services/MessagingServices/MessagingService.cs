@@ -18,9 +18,9 @@ namespace Multilang.Services.MessagingServices {
         private readonly FirebaseClient client;
         private readonly ITranslationService translationService;
 
-        public MessagingService(FirebaseClient client, ITranslationService translationService) {
+        public MessagingService(FirebaseClient client, TranslationServiceFactory translationFactory) {
             this.client = client;
-            this.translationService = translationService;
+            this.translationService = translationFactory.GetInstance();
         }
 
         public async Task<Boolean> SendBinary(User sender, User recipient, 
