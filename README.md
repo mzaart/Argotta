@@ -26,3 +26,7 @@ This repository contains the code of the backend API.
 - Repositories: Provide a way to interact with the persistant storage
 - RequestPipeline: Contains Authentication Filters, Request Validation and Logging, in addtion to error handling
 - Services: Handles communication with Translation APIs, Firebase Cloud Messaging. Also, handles JWT authentication.
+
+## Tech Stack
+
+<img src="https://lh3.googleusercontent.com/w0L-Qn0FPfsr61UhKwIL0dC5ZCjXpuN-Jto49D0ysipNRhxal577I5-MMdAET06Ru7xtMW7zlh-doUrOQLDkK0oSuDWq3-G_9yBf32CBVNGgvAFZ8MIHG8YC0BlIMzkVcuIHtPvz"/>
