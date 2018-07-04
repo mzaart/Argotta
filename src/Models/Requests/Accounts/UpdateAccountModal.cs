@@ -11,7 +11,6 @@ namespace Multilang.Models.Db
         [JsonProperty("display_name")]
         public string displayName { get; set; }
 
-        [RegularExpression(Utils.Validator.ALPHA_SPACE)]
         [JsonProperty("full_name")]
         public string fullName { get; set; }
 

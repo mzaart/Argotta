@@ -7,6 +7,9 @@ namespace Multilang.Models.Messages {
         [JsonProperty("sender_id")]
         public string senderId { get; set; }
 
+        [JsonProperty("sender_username")]
+        public string senderUsername { get; set; }
+
         [JsonProperty("sender_lang_code")]
         public string senderLangCode { get; set; }
 

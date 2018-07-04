@@ -58,6 +58,7 @@ namespace Multilang.Services.MessagingServices {
             var msg = new MessagePayload(new Message 
             {
                 senderId = sender.Id.ToString(),
+                senderUsername = sender.displayName,
                 senderLangCode = sender.langCode,
                 recepientId = recipient.Id.ToString(),
                 recepientLang = recipient.language,
